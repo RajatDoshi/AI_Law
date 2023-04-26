@@ -1,0 +1,20 @@
+'''
+(base) Rajats-MBP:AI_Law rajatdoshi$ openai api fine_tunes.follow -i ft-rKafg2ByaCtqLuUKgbVfRUD4
+[2023-04-16 17:21:18] Created fine-tune: ft-rKafg2ByaCtqLuUKgbVfRUD4
+[2023-04-16 17:31:05] Fine-tune costs $0.00
+[2023-04-16 17:31:06] Fine-tune enqueued. Queue number: 0
+[2023-04-16 17:31:06] Fine-tune started
+[2023-04-16 17:31:23] Completed epoch 1/4
+[2023-04-16 17:31:26] Completed epoch 2/4
+[2023-04-16 17:31:29] Completed epoch 3/4
+[2023-04-16 17:31:32] Completed epoch 4/4
+[2023-04-16 17:31:48] Uploaded model: ada:ft-personal:ai-law-finetune-2023-04-16-21-31-48
+[2023-04-16 17:31:49] Uploaded result file: file-WrnZ8yrbPjrChAdt8mR6uaEH
+[2023-04-16 17:31:49] Fine-tune succeeded
+
+Job complete! Status: succeeded 🎉
+Try out your fine-tuned model:
+
+openai api completions.create -m ada:ft-personal:ai-law-finetune-2023-04-16-21-31-48 -p <YOUR_PROMPT>
+
+'''

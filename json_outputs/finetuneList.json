@@ -1,0 +1,90 @@
+{
+    "command": "curl https://api.openai.com/v1/fine-tunes   -H \"Authorization: Bearer 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\""
+},
+{
+  "object": "list",
+  "data": [
+    {
+      "object": "fine-tune",
+      "id": "ft-BNchrnA4GYl8tij6rDhqEh7e",
+      "hyperparams": {
+        "n_epochs": 4,
+        "batch_size": 1,
+        "prompt_loss_weight": 0.01,
+        "learning_rate_multiplier": 0.1
+      },
+      "organization_id": "org-h7rfsUkdnJK0Q1xXXtpOJfNl",
+      "model": "ada",
+      "training_files": [
+        {
+          "object": "file",
+          "id": "file-IkMBlS29eCMxBJSqqrby9WK4",
+          "purpose": "fine-tune",
+          "filename": "my_data.jsonl",
+          "bytes": 7144,
+          "created_at": 1681662493,
+          "status": "processed",
+          "status_details": null
+        }
+      ],
+      "validation_files": [],
+      "result_files": [
+        {
+          "object": "file",
+          "id": "file-ibrthKx382az3A6mxH0KKSIi",
+          "purpose": "fine-tune-results",
+          "filename": "compiled_results.csv",
+          "bytes": 4140,
+          "created_at": 1681680656,
+          "status": "processed",
+          "status_details": null
+        }
+      ],
+      "created_at": 1681679405,
+      "updated_at": 1681680657,
+      "status": "succeeded",
+      "fine_tuned_model": "ada:ft-personal:ailawfinetune-2023-04-16-21-30-55"
+    },
+    {
+      "object": "fine-tune",
+      "id": "ft-rKafg2ByaCtqLuUKgbVfRUD4",
+      "hyperparams": {
+        "n_epochs": 4,
+        "batch_size": 1,
+        "prompt_loss_weight": 0.01,
+        "learning_rate_multiplier": 0.1
+      },
+      "organization_id": "org-h7rfsUkdnJK0Q1xXXtpOJfNl",
+      "model": "ada",
+      "training_files": [
+        {
+          "object": "file",
+          "id": "file-kaLmrlUc8fGBvIdHf2I5Erzl",
+          "purpose": "fine-tune",
+          "filename": "train_data.jsonl",
+          "bytes": 7144,
+          "created_at": 1681680078,
+          "status": "processed",
+          "status_details": null
+        }
+      ],
+      "validation_files": [],
+      "result_files": [
+        {
+          "object": "file",
+          "id": "file-WrnZ8yrbPjrChAdt8mR6uaEH",
+          "purpose": "fine-tune-results",
+          "filename": "compiled_results.csv",
+          "bytes": 4238,
+          "created_at": 1681680708,
+          "status": "processed",
+          "status_details": null
+        }
+      ],
+      "created_at": 1681680078,
+      "updated_at": 1681680709,
+      "status": "succeeded",
+      "fine_tuned_model": "ada:ft-personal:ai-law-finetune-2023-04-16-21-31-48"
+    }
+  ]
+}

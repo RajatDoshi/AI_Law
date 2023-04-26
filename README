@@ -1,0 +1,52 @@
+Step 0:
+Scrape question and answer pairs for the topic you are interested in fine-tuning your model (in my case immigration law questions)
+
+Step 1:
+Convert the question answer pairs to the format {"prompt": "question", "completion": "answer"} (can use LLM tools for this)
+
+Step 2:
+Make sure that the training data is in a jsonl file (can use convert_data.py to go from python dictionary to correct file type)
+The data is stored in the training_data.jsonl file
+
+Step 3:
+Upload the data to file endpoint on openapi servers for training
+
+curl https://api.openai.com/v1/files \
+ -H "Authorization: Bearer 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" \
+ -F purpose="fine-tune" \
+ -F file="@training_data.jsonl"
+
+keep track of the file id
+
+file-OH5Qm13yPaCQxzjrE7PnG33I
+
+Step 4:
+Make sure that the data is uploaded using
+
+curl https://api.openai.com/v1/files/{file-id}/content \
+ -H "Authorization: Bearer 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" > datafetchedfromopenai.jsonl
+
+Step 5:
+Fine tune model with uploaded data and using the following command
+
+curl --location --request POST 'https://api.openai.com/v1/fine-tunes' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer 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' \
+--data-raw '{
+  "training_file": "{training_file}",
+  "model":"davinci",
+  "suffix":"{suffix}"
+}
+'
+
+Step 6:
+Check your fine tune jobs
+
+curl https://api.openai.com/v1/fine-tunes \
+  -H "Authorization: Bearer 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"
+
+Step 7:
+Modify the model name in the main file
+
+Step 8:
+Try various outputs
